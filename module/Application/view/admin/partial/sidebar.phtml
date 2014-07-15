@@ -1,0 +1,23 @@
+<div id="sidebar" class="sidebar responsive">
+	<script type="text/javascript">
+		try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+	</script>
+
+	<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+		<?php // echo $this -> render('admin/partial/sidebar-shortcut-buttons');?>
+	</div>
+	<?php // echo $this -> render('admin/partial/sidebar-navigation');
+		echo $this -> navigation('navigation-admin')	-> menu()
+														-> setMinDepth(0) -> setMaxDepth(0)
+														-> setRenderInvisible(false)
+														-> setPartial('admin/partial/sidebar-navigation')-> render();
+	?>
+	<!-- #section:basics/sidebar.layout.minimize -->
+	<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+		<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+	</div>
+	<!-- /section:basics/sidebar.layout.minimize -->
+	<script type="text/javascript">
+		try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+	</script>
+</div>

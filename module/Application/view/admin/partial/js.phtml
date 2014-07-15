@@ -1,0 +1,32 @@
+<!--[if !IE]> -->
+<script type="text/javascript">
+	window.jQuery || document.write("<script src='/assets/admin/js/jquery.min.js'>"+"<"+"/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='/assets/admin/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+<script type="text/javascript">
+	if('ontouchstart' in document.documentElement) document.write("<script src='/assets/admin/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="/assets/admin/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+<?php echo $this -> pluginScript();?>
+<!-- ace scripts -->
+<script src="/assets/admin/js/ace-elements.min.js"></script>
+<script src="/assets/admin/js/ace.min.js"></script>
+
+<!-- inline scripts related to this page -->
+<link rel="stylesheet" href="/assets/admin/css/ace.onpage-help.css" />
+<!--
+<link rel="stylesheet" href="../docs/assets/js/themes/sunburst.css" />
+-->
+<script type="text/javascript"> ace.vars['base'] = '/admin'; </script>
+<script src="/assets/admin/js/ace/ace.onpage-help.js"></script>
+
+<?php echo $this -> inlineScript();?>

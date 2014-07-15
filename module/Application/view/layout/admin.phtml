@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<?php echo $this -> render('admin/partial/head')?>
+	</head>
+
+	<body class="no-skin">
+		<?php echo $this -> render('admin/partial/navibar')?>
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<?php echo $this -> render('admin/partial/sidebar');?>
+
+			<div class="main-content">
+				<?php
+					// echo $this -> render('admin/partial/breadcrumb');
+					echo $this -> navigation('navigation-admin') -> breadcrumbs() 	-> setMinDepth(0)
+																					-> setMaxDepth(0)
+																					-> setPartial('admin/partial/breadcrumb')
+																					-> render();
+				?>
+				<div class="page-content">
+					<?php echo $this -> render('admin/partial/setting-box')?>
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+							<?php echo $this -> layout() -> content;?>
+							<!-- PAGE CONTENT ENDS -->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
+
+			<?php echo $this -> render('admin/partial/footer')?>
+		</div><!-- /.main-container -->
+
+		<?php echo $this -> render('admin/partial/js')?>
+	</body>
+</html>

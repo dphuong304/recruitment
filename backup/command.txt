@@ -1,0 +1,2 @@
+php-xampp ./vendor/bin/doctrine orm:convert-mapping --force --from-database --namespace="Entity\\" annotation "./module/Application/src"
+php-xampp ./vendor/bin/doctrine orm:generate-entities --generate-annotations="true"  --generate-methods="true" "./module/Application/src"

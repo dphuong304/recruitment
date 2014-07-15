@@ -1,0 +1,28 @@
+<li class="light-blue">
+	<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+		<img class="nav-user-photo" src="/assets/admin/avatars/user.jpg" alt="Jason's Photo" />
+		<span class="user-info">
+			<?php echo sprintf($this -> translate('<small>Welcome,</small>%s'), !empty($this -> identity()) ? $this -> identity() -> getUsername() : '');?>
+		</span>
+
+		<i class="ace-icon fa fa-caret-down"></i>
+	</a>
+
+	<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+		<li>
+			<a href="profile.html">
+				<i class="ace-icon fa fa-user"></i>
+				<?php echo $this -> translate('Change Password')?>
+			</a>
+		</li>
+
+		<li class="divider"></li>
+
+		<li>
+			<a href="<?php echo $this -> url('admin/default', array('controller' => 'auth', 'action' => 'logout'));?>">
+				<i class="ace-icon fa fa-power-off"></i>
+				Logout
+			</a>
+		</li>
+	</ul>
+</li>
