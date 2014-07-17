@@ -16,7 +16,7 @@ $dbParams = array(
 		'driver'   => 'pdo_mysql',
 		'user'     => 'root',
 		'password' => '',
-		'dbname'   => 'logo-shop',
+		'dbname'   => 'recruitment',
 );
 // $config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
 $config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode, null, null, false);
