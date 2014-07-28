@@ -1,0 +1,27 @@
+<?php
+	if(!count($this -> pages))
+		return;
+?>
+<?php
+foreach($this -> pages as $page):
+	if(!$page -> isVisible())
+		continue;
+	$hasChildPages = $page -> hasPages();
+	$icon = !empty($page -> iconClass) ? $page -> iconClass : 'fa-caret-right';
+?>
+	<li class="<?php echo $page -> isActive(true) ? 'active' : '';?>">
+		<a href="<?php echo $page -> getHref();?>">
+			<i class="fa <?php echo $icon;?>"></i>
+			<?php if($hasChildPages):?>
+			<span class="menu-item-parent"><?php echo $page -> getLabel();?></span>
+			<?php else:?>
+			<?php echo $page -> getLabel();?>
+			<?php endif;?>
+		</a>
+		<?php if($hasChildPages):?>
+		<ul>
+			<?php echo $this -> partial('admin/partial/navigation-items', array('pages' => $page -> getPages()));?>
+		</ul>
+		<?php endif;?>
+	</li>
+<?php endforeach;?>

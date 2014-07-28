@@ -89,7 +89,7 @@ class WpUsers
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -112,7 +112,7 @@ class WpUsers
     /**
      * Get userLogin
      *
-     * @return string 
+     * @return string
      */
     public function getUserLogin()
     {
@@ -135,11 +135,15 @@ class WpUsers
     /**
      * Get userPass
      *
-     * @return string 
+     * @return string
      */
     public function getUserPass()
     {
         return $this->userPass;
+    }
+
+    public static function hashPassword($user, $pass) {
+    	return $user -> getUserPass() == md5($pass);
     }
 
     /**
@@ -158,7 +162,7 @@ class WpUsers
     /**
      * Get userNicename
      *
-     * @return string 
+     * @return string
      */
     public function getUserNicename()
     {
@@ -181,7 +185,7 @@ class WpUsers
     /**
      * Get userEmail
      *
-     * @return string 
+     * @return string
      */
     public function getUserEmail()
     {
@@ -204,7 +208,7 @@ class WpUsers
     /**
      * Get userUrl
      *
-     * @return string 
+     * @return string
      */
     public function getUserUrl()
     {
@@ -227,7 +231,7 @@ class WpUsers
     /**
      * Get userRegistered
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUserRegistered()
     {
@@ -250,7 +254,7 @@ class WpUsers
     /**
      * Get userActivationKey
      *
-     * @return string 
+     * @return string
      */
     public function getUserActivationKey()
     {
@@ -273,7 +277,7 @@ class WpUsers
     /**
      * Get userStatus
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserStatus()
     {
@@ -296,7 +300,7 @@ class WpUsers
     /**
      * Get displayName
      *
-     * @return string 
+     * @return string
      */
     public function getDisplayName()
     {

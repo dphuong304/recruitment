@@ -1,0 +1,18 @@
+<!-- #NAVIGATION -->
+<aside id="left-panel">
+
+	<?php echo $this -> render('admin/partial/navigation-user-info')?>
+
+	<nav>
+		<?php
+		echo $this -> navigation('navigation-admin')	-> menu()
+														-> setMinDepth(0) -> setMaxDepth(0)
+														-> setRenderInvisible(false)
+														-> setPartial('admin/partial/navigation-container')-> render();
+		?>
+	</nav>
+	<span class="minifyme" data-action="minifyMenu">
+		<i class="fa fa-arrow-circle-left hit"></i>
+	</span>
+</aside>
+<!-- END NAVIGATION -->

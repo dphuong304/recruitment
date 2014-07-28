@@ -1,38 +1,37 @@
-<div class="breadcrumbs" id="breadcrumbs">
-	<script type="text/javascript">
-		try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
-	</script>
+<!-- RIBBON -->
+<div id="ribbon">
 
-	<ul class="breadcrumb">
-		<li>
-			<i class="ace-icon fa fa-home home-icon"></i>
-			<a href="/">Home</a>
-		</li>
+	<span class="ribbon-button-alignment">
+		<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+			<i class="fa fa-refresh"></i>
+		</span>
+	</span>
+
+	<!-- breadcrumb -->
+	<?php if(count($this -> pages)):?>
+	<ol class="breadcrumb">
+		<li>Home</li>
 		<?php foreach($this -> pages as $page):
 			if($page -> id == 'home')
 				continue;
 		?>
-			<?php if($page -> isActive()):?>
-			<li class="active"><?php echo $page -> getLabel();?></li>
-			<?php else:?>
-			<li>
-				<a href="<?php echo $page -> getHref();?>"><?php echo $page -> getLabel();?></a>
-			</li>
-			<?php endif;?>
+
+		<li><?php echo $page -> getLabel();?></li>
 		<?php endforeach;?>
+	</ol>
+	<?php endif;?>
+	<!-- end breadcrumb -->
 
-	</ul><!-- /.breadcrumb -->
-	<?php /* CLOSED *?>
-	<!-- #section:basics/content.searchbox -->
-	<div class="nav-search" id="nav-search">
-		<form class="form-search">
-			<span class="input-icon">
-				<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-				<i class="ace-icon fa fa-search nav-search-icon"></i>
-			</span>
-		</form>
-	</div><!-- /.nav-search -->
+	<!-- You can also add more buttons to the
+	ribbon for further usability
 
-	<!-- /section:basics/content.searchbox -->
-	<?php /* CLOSED */?>
+	Example below:
+
+	<span class="ribbon-button-alignment pull-right">
+	<span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+	<span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+	<span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+	</span> -->
+
 </div>
+<!-- END RIBBON -->

@@ -1,41 +1,52 @@
-<!DOCTYPE html>
+<?php
+$this -> placeholder('page-header') -> data = array('pageTitle' => 'Page Title', 'subTitle' => 'Sub Title');
+$this -> placeholder('page-header') -> captureStart('SET', 'data');?>
+	<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+		<h1 class="page-title txt-color-blueDark">
+			<!-- PAGE HEADER -->
+			<i class="fa-fw fa fa-home"></i>
+			<?php echo $this -> placeholder('page-header') -> data['pageTitle'];?>
+			<?php if(!empty($this -> placeholder('page-header') -> data['subTitle'])):?>
+			<span>&gt; <?php echo $this -> placeholder('page-header') -> data['subTitle'];?></span>
+			<?php endif;?>
+		</h1>
+	</div>
+<?php $this -> placeholder('page-header') -> captureEnd();?>
+
+<?php echo $this -> doctype('HTML5');?>
 <html lang="en">
 	<head>
-		<?php echo $this -> render('admin/partial/head')?>
+		<?php echo $this -> render('admin/partial/head');?>
 	</head>
-
-	<body class="no-skin">
-		<?php echo $this -> render('admin/partial/navibar')?>
-		<div class="main-container" id="main-container">
-			<script type="text/javascript">
-				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
-			</script>
-
-			<?php echo $this -> render('admin/partial/sidebar');?>
-
-			<div class="main-content">
-				<?php
+	<body class="">
+		<?php echo $this -> render('admin/partial/header');?>
+		<?php echo $this -> render('admin/partial/navigation');?>
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
+			<?php
 					// echo $this -> render('admin/partial/breadcrumb');
-					echo $this -> navigation('navigation-admin') -> breadcrumbs() 	-> setMinDepth(0)
-																					-> setMaxDepth(0)
-																					-> setPartial('admin/partial/breadcrumb')
-																					-> render();
-				?>
-				<div class="page-content">
-					<?php echo $this -> render('admin/partial/setting-box')?>
-					<div class="row">
-						<div class="col-xs-12">
-							<!-- PAGE CONTENT BEGINS -->
-							<?php echo $this -> layout() -> content;?>
-							<!-- PAGE CONTENT ENDS -->
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div><!-- /.page-content -->
-			</div><!-- /.main-content -->
-
-			<?php echo $this -> render('admin/partial/footer')?>
-		</div><!-- /.main-container -->
-
-		<?php echo $this -> render('admin/partial/js')?>
+				echo $this -> navigation('navigation-admin') -> breadcrumbs() 	-> setMinDepth(0)
+																				-> setMaxDepth(0)
+																				-> setPartial('admin/partial/breadcrumb')
+																				-> render();
+			?>
+			<!-- MAIN CONTENT -->
+			<div id="content">
+				<div class="row">
+					<?php echo $this -> placeholder('page-header');?>
+					<?php echo $this -> render('admin/partial/sparkline-graph');?>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<?php echo $this -> layout() -> content;?>
+					</div>
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN PANEL -->
+		<?php echo $this -> render('admin/partial/footer');?>
+		<?php echo $this -> render('admin/partial/shortcut-area');?>
+		<?php echo $this -> render('admin/partial/js');?>
 	</body>
 </html>

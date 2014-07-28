@@ -13,11 +13,11 @@ class LoginForm extends Form {
 			'options' => array(
 				'label' => 'Username',
 				'label_attributes' => array(
-					'class' => 'col-sm-5 no-padding-right',
+					'class' => 'label',
 				),
 			),
 			'attributes' => array(
-				'class' => 'form-control', 'tabindex' => 1, 'id' => 'username', 'placeholder' => 'Username'
+				'tabindex' => 1, 'id' => 'username'
 			),
 		));
 		$this -> add(array(
@@ -26,44 +26,17 @@ class LoginForm extends Form {
 				'options' => array(
 					'label' => 'Password',
 					'label_attributes' => array(
-						'class' => 'col-sm-5 no-padding-right',
+						'class' => 'label',
 					),
 				),
 				'attributes' => array(
-					'class' => 'form-control', 'tabindex' => 2, 'id' => 'password', 'placeholder' => 'Password'
+					'tabindex' => 2, 'id' => 'password'
 				),
 		));
 
-		/* $this -> add(array(
-		    'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-		    'name' => 'lang',
-			'attributes' => array(
-				'class' => 'col-xs-12 form-control', 'tabindex' => 5, 'id' => 'lang'
-			),
-		    'options' => array(
-		    	'label' => 'Language',
-	    		'label_attributes' => array(
-    				'class' => 'col-sm-5 no-padding-right',
-	    		),
-		        'object_manager' => $objectManager,
-				'display_empty_item' => true,
-		    	'empty_item_label' => 'Select language...',
-		        'target_class'   => 'Admin\Entity\KintaiLanguage',
-		        'property'       => 'langTitle',
-		        'is_method'      => true,
-		        'find_method'    => array(
-		            'name'   => 'findBy',
-		            'params' => array(
-		            	'criteria' => array(),
-		                'orderBy'  => array('langTitle' => 'ASC'),
-		            ),
-		        ),
-		    ),
-		)); */
-
 		$this -> setAttributes(array(
 				'method' => 'post',
-				'class' => 'form-horizontal',
+				'class' => 'smart-form client-form',
 				));
 		$this -> setInputFilter($this -> _getInputFilter());
 	}

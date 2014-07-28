@@ -54,12 +54,12 @@ class AuthenticationAdapter extends AbstractAdapter {
 
 		try {
 			$em = $this -> getEntityManager();
-			$userEntityName = "Entity\LgAdministrator";
+			$userEntityName = "Entity\WpUsers";
 
 			// check admin information
-			/* @var $user Entity\LgAdministrator */
+			/* @var $user Entity\WpUsers */
 			$user = $em -> getRepository($userEntityName) -> findOneBy(array(
-					'username' => $username,
+					'userLogin' => $username,
 			));
 			if(!$user) {
 				$result = array(
@@ -70,7 +70,7 @@ class AuthenticationAdapter extends AbstractAdapter {
 				return $this -> createAuthenticationResult($result);
 			}
 
-			$checkPass = \Entity\LgAdministrator::hashPassword($user, $password);
+			$checkPass = \Entity\WpUsers::hashPassword($user, $password);
 
 			if(!$checkPass) {
 				$result = array(

@@ -1,32 +1,132 @@
-<!--[if !IE]> -->
-<script type="text/javascript">
-	window.jQuery || document.write("<script src='/assets/admin/js/jquery.min.js'>"+"<"+"/script>");
+<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+<script data-pace-options='{ "restartOnRequestAfter": true }' src="/assets/admin/js/plugin/pace/pace.min.js"></script>
+
+<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script>
+	if (!window.jQuery) {
+		document.write('<script src="/assets/admin/js/libs/jquery-2.0.2.min.js"><\/script>');
+	}
 </script>
 
-<!-- <![endif]-->
-
-<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='/assets/admin/js/jquery1x.min.js'>"+"<"+"/script>");
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script>
+	if (!window.jQuery.ui) {
+		document.write('<script src="/assets/admin/js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+	}
 </script>
+
+<!-- IMPORTANT: APP CONFIG -->
+<script src="/assets/admin/js/app.config.js"></script>
+
+<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+<script src="/assets/admin/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+
+<!-- BOOTSTRAP JS -->
+<script src="/assets/admin/js/bootstrap/bootstrap.min.js"></script>
+
+<!-- CUSTOM NOTIFICATION -->
+<script src="/assets/admin/js/notification/SmartNotification.min.js"></script>
+
+<!-- JARVIS WIDGETS -->
+<script src="/assets/admin/js/smartwidgets/jarvis.widget.min.js"></script>
+
+<!-- EASY PIE CHARTS -->
+<script src="/assets/admin/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+<!-- SPARKLINES -->
+<script src="/assets/admin/js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+<!-- JQUERY VALIDATE -->
+<script src="/assets/admin/js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+<!-- JQUERY MASKED INPUT -->
+<script src="/assets/admin/js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+<!-- JQUERY SELECT2 INPUT -->
+<script src="/assets/admin/js/plugin/select2/select2.min.js"></script>
+
+<!-- JQUERY UI + Bootstrap Slider -->
+<script src="/assets/admin/js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+<!-- browser msie issue fix -->
+<script src="/assets/admin/js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+<!-- FastClick: For mobile devices -->
+<script src="/assets/admin/js/plugin/fastclick/fastclick.min.js"></script>
+
+<!--[if IE 8]>
+
+<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
 <![endif]-->
-<script type="text/javascript">
-	if('ontouchstart' in document.documentElement) document.write("<script src='/assets/admin/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-</script>
-<script src="/assets/admin/js/bootstrap.min.js"></script>
+<!-- MAIN APP JS FILE -->
+<script src="/assets/admin/js/app.min.js"></script>
 
-<!-- page specific plugin scripts -->
+<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
+<!-- Voice command : plugin -->
+<script src="/assets/admin/js/speech/voicecommand.min.js"></script>
+
+<!-- PAGE RELATED PLUGIN(S)
+<script src="..."></script>-->
 <?php echo $this -> pluginScript();?>
-<!-- ace scripts -->
-<script src="/assets/admin/js/ace-elements.min.js"></script>
-<script src="/assets/admin/js/ace.min.js"></script>
 
-<!-- inline scripts related to this page -->
-<link rel="stylesheet" href="/assets/admin/css/ace.onpage-help.css" />
-<!--
-<link rel="stylesheet" href="../docs/assets/js/themes/sunburst.css" />
--->
-<script type="text/javascript"> ace.vars['base'] = '/admin'; </script>
-<script src="/assets/admin/js/ace/ace.onpage-help.js"></script>
+<script type="text/javascript">
 
+	$(document).ready(function() {
+
+		/* DO NOT REMOVE : GLOBAL FUNCTIONS!
+		 *
+		 * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
+		 *
+		 * // activate tooltips
+		 * $("[rel=tooltip]").tooltip();
+		 *
+		 * // activate popovers
+		 * $("[rel=popover]").popover();
+		 *
+		 * // activate popovers with hover states
+		 * $("[rel=popover-hover]").popover({ trigger: "hover" });
+		 *
+		 * // activate inline charts
+		 * runAllCharts();
+		 *
+		 * // setup widgets
+		 * setup_widgets_desktop();
+		 *
+		 * // run form elements
+		 * runAllForms();
+		 *
+		 ********************************
+		 *
+		 * pageSetUp() is needed whenever you load a page.
+		 * It initializes and checks for all basic elements of the page
+		 * and makes rendering easier.
+		 *
+		 */
+
+		 pageSetUp();
+
+		/*
+		 * ALL PAGE RELATED SCRIPTS CAN GO BELOW HERE
+		 * eg alert("my home function");
+		 *
+		 * var pagefunction = function() {
+		 *   ...
+		 * }
+		 * loadScript("/assets/admin/js/plugin/_PLUGIN_NAME_.js", pagefunction);
+		 *
+		 * TO LOAD A SCRIPT:
+		 * var pagefunction = function (){
+		 *  loadScript(".../plugin.js", run_after_loaded);
+		 * }
+		 *
+		 * OR
+		 *
+		 * loadScript(".../plugin.js", run_after_loaded);
+		 */
+
+	});
+
+</script>
 <?php echo $this -> inlineScript();?>

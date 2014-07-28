@@ -3,9 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/nguyenduyphuong/Documents/www/recruitment/config/autoload/local.php</file>
-            <file>file:/Users/nguyenduyphuong/Documents/www/recruitment/config/autoload/global.php</file>
-            <file>file:/Users/nguyenduyphuong/Documents/www/recruitment/public/index.php</file>
+            <file>file:/Users/nguyenduyphuong/Documents/www/recruitment/module/Application/view/admin/partial/head.phtml</file>
+            <file>file:/Users/nguyenduyphuong/Documents/www/recruitment/module/Application/view/layout/admin.phtml</file>
         </group>
     </open-files>
 </project-private>
