@@ -36,7 +36,7 @@ class LoginForm extends Form {
 
 		$this -> setAttributes(array(
 				'method' => 'post',
-				'class' => 'smart-form client-form',
+				'class' => 'smart-form client-form login-box',
 				));
 		$this -> setInputFilter($this -> _getInputFilter());
 	}
